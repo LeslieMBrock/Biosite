@@ -490,8 +490,14 @@ header::after {
 /*======================================
     Tables
 ======================================*/
+.hobby-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
 .hobby-table table {
     width: min(100%, 900px);
+    min-width: 680px;
     margin: 1rem auto 0;
     border-collapse: collapse;
     background: var(--white);
@@ -521,6 +527,7 @@ header::after {
     color: var(--palestine-green);
     text-decoration: none;
     font-weight: 700;
+    overflow-wrap: anywhere;
 }
 
 .hobby-table a:hover,
@@ -528,6 +535,30 @@ header::after {
 .hobby-table a:focus-visible {
     color: var(--palestine-red);
     text-decoration: underline;
+}
+
+.table-cell-copy {
+    position: relative;
+}
+
+.table-read-more {
+    display: none;
+    margin-top: 0.55rem;
+    padding: 0.35rem 0.7rem;
+    border: 1px solid var(--charcoal-gray);
+    border-radius: 999px;
+    background: var(--surface-light);
+    color: var(--charcoal-gray);
+    font-family: var(--body-font);
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.table-read-more:hover,
+.table-read-more:focus-visible {
+    background: var(--charcoal-gray);
+    color: var(--white);
 }
 
 /*======================================
@@ -563,10 +594,35 @@ footer {
     Media Queries
 ======================================*/
 /* ============================== */
-/* Large Desktop Media Query      */
-/* 1440px and up                  */
+/* Ultra Wide Desktop Screens     */
+/* 1920px and up (large monitors) */
 /* ============================== */
-@media (min-width: 1440px) {
+@media (min-width: 1920px) {
+    body {
+        background: linear-gradient(180deg, #F5F5DC 0%, #ECF4E8 48%, #F5F5DC 100%);
+    }
+
+    main {
+        max-width: 1480px;
+        margin: 0 auto;
+    }
+
+    .gallery-item {
+        flex: 0 0 calc((100% - 2rem) / 3);
+    }
+
+    .action-list img {
+        width: 780px;
+        height: 520px;
+        max-width: none;
+    }
+}
+
+/* ============================== */
+/* Large Desktop Screens          */
+/* 1440px to 1919px (big laptops) */
+/* ============================== */
+@media (min-width: 1440px) and (max-width: 1919px) {
     body {
         background: linear-gradient(180deg, #F5F5DC 0%, #ECF4E8 48%, #F5F5DC 100%);
     }
@@ -588,10 +644,10 @@ footer {
 }
 
 /* ============================== */
-/* Desktop Media Query            */
-/* 1024px to 1439px               */
+/* Standard Desktop Screens       */
+/* 1200px to 1439px (desktop)     */
 /* ============================== */
-@media (min-width: 1024px) and (max-width: 1439px) {
+@media (min-width: 1200px) and (max-width: 1439px) {
     main {
         max-width: 1200px;
         margin: 0 auto;
@@ -604,8 +660,8 @@ footer {
     }
 
     .hero-image {
-        flex: 0 0 28.5%;
-        margin-top: -0.75rem;
+        flex: 0 0 30%;
+        margin-top: -0.5rem;
     }
 
     .main-text {
@@ -613,8 +669,8 @@ footer {
     }
 
     .action-list img {
-        width: 720px;
-        height: 480px;
+        width: 640px;
+        height: 430px;
         max-width: none;
     }
 
@@ -624,15 +680,42 @@ footer {
 }
 
 /* ============================== */
-/* Tablet Media Query             */
-/* 768px to 1023px                */
+/* Small Desktop / Laptop Screens */
+/* 1024px to 1199px (laptops)     */
 /* ============================== */
-@media (min-width: 768px) and (max-width: 1023px) {
-    div {
-        margin-left: auto;
-        margin-right: auto;
+@media (min-width: 1024px) and (max-width: 1199px) {
+    main {
+        max-width: 1040px;
+        margin: 0 auto;
     }
 
+    .main-content {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 2rem;
+    }
+
+    .hero-image {
+        flex: 0 0 33%;
+    }
+
+    .gallery-item {
+        flex: 0 0 calc((100% - 2rem) / 3);
+    }
+
+    .action-list img {
+        width: 560px;
+        height: 380px;
+        max-width: none;
+    }
+}
+
+/* ============================== */
+/* Tablet Landscape Screens       */
+/* 900px to 1023px (horizontal)   */
+/* ============================== */
+@media (min-width: 900px) and (max-width: 1023px) {
     .menu-toggle {
         display: inline-block;
         margin-top: 0.5rem;
@@ -650,6 +733,11 @@ footer {
         display: flex;
     }
 
+    .main-content {
+        gap: 1.5rem;
+        padding: 2rem;
+    }
+
     .gallery-item {
         flex: 0 0 calc((100% - 1rem) / 2);
     }
@@ -657,18 +745,75 @@ footer {
     .action-list {
         justify-content: flex-start;
     }
+
+    .hobby-table table {
+        min-width: 620px;
+    }
+
+    .hobby-table th,
+    .hobby-table td {
+        padding: 0.8rem 0.85rem;
+        font-size: 1rem;
+    }
 }
 
 /* ============================== */
-/* Mobile Media Query             */
-/* 767px and below                */
+/* Tablet Portrait Screens        */
+/* 768px to 899px (vertical)      */
 /* ============================== */
-@media (max-width: 767px) {
-    div {
-        margin-left: auto;
-        margin-right: auto;
+@media (min-width: 768px) and (max-width: 899px) {
+    .menu-toggle {
+        display: inline-block;
+        margin-top: 0.5rem;
     }
 
+    .link-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0.75rem;
+    }
+
+    nav.is-open .link-nav {
+        display: flex;
+    }
+
+    .main-content {
+        flex-direction: column;
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    .hero-image {
+        flex: none;
+        width: 100%;
+    }
+
+    .gallery-item {
+        flex: 0 0 calc((100% - 1rem) / 2);
+    }
+
+    .action-list {
+        justify-content: flex-start;
+    }
+
+    .hobby-table table {
+        min-width: 560px;
+    }
+
+    .hobby-table th,
+    .hobby-table td {
+        padding: 0.75rem 0.8rem;
+        font-size: 0.98rem;
+    }
+}
+
+/* ============================== */
+/* Large Mobile Screens           */
+/* 576px to 767px (large phones)  */
+/* ============================== */
+@media (min-width: 576px) and (max-width: 767px) {
     .menu-toggle {
         display: inline-block;
         margin-top: 0.5rem;
@@ -697,11 +842,19 @@ footer {
     }
 
     .hobby-table table {
-        display: none;
+        display: table;
+        min-width: 520px;
+    }
+
+    .hobby-table th,
+    .hobby-table td {
+        padding: 0.7rem 0.75rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
     }
 
     .hobby-mobile-list {
-        display: block;
+        display: none;
         margin: 0.75rem 0 0;
     }
 
@@ -713,14 +866,11 @@ footer {
 
     .gallery-item {
         flex: 0 0 100%;
+        scroll-snap-align: start;
     }
 
     .scrolling-gallery {
         scroll-snap-type: x mandatory;
-    }
-
-    .gallery-item {
-        scroll-snap-align: start;
     }
 
     .action-list {
@@ -735,11 +885,10 @@ footer {
         height: 180px;
     }
 
-
     .main-content {
         flex-direction: column;
-        padding: 2rem;
-        gap: 2rem;
+        padding: 1.5rem;
+        gap: 1.5rem;
     }
 
     .hero-image {
@@ -748,7 +897,205 @@ footer {
     }
 }
 
+/* ============================== */
+/* Medium Mobile Screens          */
+/* 421px to 575px (most phones)   */
+/* ============================== */
+@media (min-width: 421px) and (max-width: 575px) {
+    .menu-toggle {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+
+    .link-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0.75rem;
+    }
+
+    nav.is-open .link-nav {
+        display: flex;
+    }
+
+    .gallery-content,
+    .action-items {
+        display: block;
+        width: 100%;
+    }
+
+    .hobby-table {
+        padding: 1rem;
+    }
+
+    .hobby-table table {
+        display: table;
+        min-width: 480px;
+    }
+
+    .hobby-table th,
+    .hobby-table td {
+        padding: 0.65rem 0.7rem;
+        font-size: 0.92rem;
+        line-height: 1.45;
+    }
+
+    .table-read-more {
+        display: inline-block;
+    }
+
+    .table-cell-copy.is-collapsed {
+        max-height: 5.8em;
+        overflow: hidden;
+    }
+
+    .table-cell-copy.is-collapsed::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2.1em;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0), var(--white));
+        pointer-events: none;
+    }
+
+    .hobby-mobile-list {
+        display: none;
+        margin: 0.75rem 0 0;
+    }
+
+    .hobby-mobile-list li {
+        padding: 1rem;
+        margin-bottom: 0.75rem;
+        border-radius: 10px;
+    }
+
+    .gallery-item {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+    }
+
+    .scrolling-gallery {
+        scroll-snap-type: x mandatory;
+    }
+
+    .action-list {
+        justify-content: flex-start;
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 0.25rem;
+    }
+
+    .action-list img {
+        width: 100%;
+        max-width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .main-content {
+        flex-direction: column;
+        padding: 1.25rem;
+        gap: 1.25rem;
+        margin: 1.25rem 0.75rem;
+    }
+
+    .hero-image {
+        flex: none;
+        width: 100%;
+    }
+}
+
+/* ============================== */
+/* Small Mobile Screens           */
+/* 420px and below (small phones) */
+/* ============================== */
 @media (max-width: 420px) {
+    .menu-toggle {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+
+    .link-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0.75rem;
+    }
+
+    nav.is-open .link-nav {
+        display: flex;
+    }
+
+    .gallery-content,
+    .action-items {
+        display: block;
+        width: 100%;
+    }
+
+    .hobby-table {
+        padding: 1rem;
+    }
+
+    .hobby-table table {
+        display: table;
+        min-width: 440px;
+    }
+
+    .hobby-table th,
+    .hobby-table td {
+        padding: 0.6rem 0.65rem;
+        font-size: 0.88rem;
+        line-height: 1.4;
+    }
+
+    .table-read-more {
+        display: inline-block;
+        font-size: 0.82rem;
+    }
+
+    .table-cell-copy.is-collapsed {
+        max-height: 5.4em;
+        overflow: hidden;
+    }
+
+    .table-cell-copy.is-collapsed::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2em;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0), var(--white));
+        pointer-events: none;
+    }
+
+    .hobby-mobile-list {
+        display: none;
+        margin: 0.75rem 0 0;
+    }
+
+    .gallery-item {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+    }
+
+    .scrolling-gallery {
+        scroll-snap-type: x mandatory;
+    }
+
+    .action-list {
+        justify-content: flex-start;
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 0.25rem;
+    }
+
     header {
         padding: 1.25rem 1rem;
     }
@@ -775,6 +1122,7 @@ footer {
         margin: 1.25rem 0.75rem;
         padding: 1rem;
         gap: 1rem;
+        flex-direction: column;
     }
 
     .main-text h2 {
@@ -802,6 +1150,11 @@ footer {
         object-fit: cover;
     }
 
+    .hero-image {
+        flex: none;
+        width: 100%;
+    }
+
     .hobby-mobile-list li {
         padding: 0.8rem;
         font-size: 0.95rem;
@@ -817,7 +1170,8 @@ footer {
 }
 
 /* ============================== */
-/* Print Media Query              */
+/* Print Styles                   */
+/* Printer-friendly output        */
 /* ============================== */
 @media print {
     body {
