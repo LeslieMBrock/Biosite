@@ -684,12 +684,23 @@ footer {
         width: 100%;
     }
 
+    .hobby-table {
+        padding: 1rem;
+    }
+
     .hobby-table table {
         display: none;
     }
 
     .hobby-mobile-list {
         display: block;
+        margin: 0.75rem 0 0;
+    }
+
+    .hobby-mobile-list li {
+        padding: 1rem;
+        margin-bottom: 0.75rem;
+        border-radius: 10px;
     }
 
     .gallery-item {
