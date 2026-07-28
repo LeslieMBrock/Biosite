@@ -1,4 +1,4 @@
-<!--Author: Leslie Brockman
+<!--Author:Leslie Brockman
     Date: O7/27/2026
     Biosite Hobby Page-->
 
@@ -14,13 +14,13 @@
 </head>
 
 <body>
-<!-- Nav a links will be styled as buttons in the CSS -->
+<!-- Nav a links will be styled as buttons in the css-->
 <header>
     <h1>
         <span class="lang-en">Where is Doctor Safiya?</span>
         <span class="lang-ar hidden">أين الدكتور صفية؟</span>
     </h1>
-<!--This is the bilingual toggle button that will be used to switch between English and Arabic, js will be added for functionality-->
+<!--this is the bilingual toggle button that will be used to switch between English and Arabic, js will be added for functionality-->
     <div class="language-toggle">
                 <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language" data-label-en="Toggle language" data-label-ar="تبديل اللغة">
                     <span class="lang-en">English | العربية</span>
@@ -34,7 +34,7 @@
             <li><a href="https://american-nobody999.github.io/One-match"><span class="lang-en">MPGA</span><span class="lang-ar hidden">MPGA</span></a></li>
             <li><a href="hobby.html"><span class="lang-en">Sources</span><span class="lang-ar hidden">المصادر</span></a></li>
         </ul>
-<!-- Hamburger for Mobile DO NOT TOUCH THIS!!!!! EVER!-->
+<!-- Hamburger for MobileDO NOT TOUCH THIS!!!!! EVER!-->
             <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation" data-label-en="Toggle navigation" data-label-ar="تبديل التنقل" aria-expanded="false">
                 ☰
             </button>
@@ -60,24 +60,53 @@
         <tr>
             <td><span class="lang-en">The War Crimes Act (18 U.S.C. § 2441):</span><span class="lang-ar hidden">قانون جرائم الحرب (18 U.S.C. § 2441):</span></td>
             <td>
+                <div class="table-cell-copy is-collapsed" data-read-more-cell>
                     <span class="lang-en">This U.S. statute implements international obligations to hold perpetrators of war crimes accountable. It explicitly penalizes conduct defined as a "grave breach" of the 1949 Geneva Conventions.</span><span class="lang-ar hidden">يُنفّذ هذا القانون الأمريكي الالتزامات الدولية لمساءلة مرتكبي جرائم الحرب. وهو يجرّم صراحةً الأفعال المعرّفة بأنها "انتهاك جسيم" لاتفاقيات جنيف لعام 1949.</span>
+                </div>
+                <button class="table-read-more" type="button" data-read-more-toggle data-more-en="Read more" data-less-en="Show less" data-more-ar="اقرأ المزيد" data-less-ar="عرض أقل" aria-expanded="false">Read more</button>
             </td>
         </tr>
         <tr>
             <td><span class="lang-en">Grave Breaches:</span><span class="lang-ar hidden">الانتهاكات الجسيمة:</span></td>
             <td>
-                
+                <div class="table-cell-copy is-collapsed" data-read-more-cell>
                     <span class="lang-en">The report details that grave breaches include willful killing, torture, biological experiments, and willfully causing great suffering or serious injury to protected persons. Medical personnel and non-combatants fall directly under these protected classes.</span><span class="lang-ar hidden">يوضح التقرير أن الانتهاكات الجسيمة تشمل القتل العمد، والتعذيب، والتجارب البيولوجية، والتسبب عمدًا في معاناة شديدة أو إصابة خطيرة للأشخاص المحميين. ويقع العاملون في المجال الطبي وغير المقاتلين مباشرة ضمن هذه الفئات المحمية.</span>
+                </div>
+                <button class="table-read-more" type="button" data-read-more-toggle data-more-en="Read more" data-less-en="Show less" data-more-ar="اقرأ المزيد" data-less-ar="عرض أقل" aria-expanded="false">Read more</button>
             </td>
         </tr>
          <tr>
             <td><span class="lang-en">Principles of International Humanitarian Law (IHL):</span><span class="lang-ar hidden">مبادئ القانون الدولي الإنساني:</span></td>
             <td>
-                
+                <div class="table-cell-copy is-collapsed" data-read-more-cell>
                     <span class="lang-en">The report highlights the core principles of IHL—military necessity, humanity, proportionality, distinction, and honor. The principle of distinction requires combatants to distinguish between military objectives and civilian/protected units (such as hospitals and medical workers), while humanity forbids actions that cause unnecessary suffering.</span><span class="lang-ar hidden">يبرز التقرير المبادئ الأساسية للقانون الدولي الإنساني، وهي: الضرورة العسكرية، والإنسانية، والتناسب، والتمييز، والشرف. ويقتضي مبدأ التمييز أن يفرّق المقاتلون بين الأهداف العسكرية والوحدات المدنية أو المحمية (مثل المستشفيات والعاملين الطبيين)، بينما يحظر مبدأ الإنسانية الأفعال التي تتسبب في معاناة غير ضرورية.</span>
+                </div>
+                <button class="table-read-more" type="button" data-read-more-toggle data-more-en="Read more" data-less-en="Show less" data-more-ar="اقرأ المزيد" data-less-ar="عرض أقل" aria-expanded="false">Read more</button>
             </td>
         </tr>
     </table>
+    <ul class="hobby-mobile-list">
+        <li>
+            <strong><span class="lang-en">War Crimes: A Primer</span><span class="lang-ar hidden">جرائم الحرب: مقدمة</span></strong>
+            <span class="lang-en">Website: <a href="https://www.congress.gov/crs-product/LSB10709" target="_blank" rel="noopener noreferrer">https://www.congress.gov/crs-product/LSB10709</a></span>
+            <span class="lang-ar hidden">الموقع الإلكتروني: <a href="https://www.congress.gov/crs-product/LSB10709" target="_blank" rel="noopener noreferrer">https://www.congress.gov/crs-product/LSB10709</a></span>
+        </li>
+        <li>
+            <strong><span class="lang-en">The War Crimes Act (18 U.S.C. § 2441)</span><span class="lang-ar hidden">قانون جرائم الحرب (18 U.S.C. § 2441)</span></strong>
+            <span class="lang-en">This U.S. statute implements international obligations to hold perpetrators of war crimes accountable and penalizes conduct defined as a grave breach of the 1949 Geneva Conventions.</span>
+            <span class="lang-ar hidden">يُنفّذ هذا القانون الأمريكي الالتزامات الدولية لمساءلة مرتكبي جرائم الحرب، ويُجرّم الأفعال المعرّفة كـ "انتهاكات جسيمة" لاتفاقيات جنيف لعام 1949.</span>
+        </li>
+        <li>
+            <strong><span class="lang-en">Grave Breaches</span><span class="lang-ar hidden">الانتهاكات الجسيمة</span></strong>
+            <span class="lang-en">The report lists willful killing, torture, biological experiments, and causing severe suffering or serious injury to protected persons, including medical staff and non-combatants.</span>
+            <span class="lang-ar hidden">يسرد التقرير القتل العمد، والتعذيب، والتجارب البيولوجية، والتسبب في معاناة شديدة أو إصابة خطيرة للأشخاص المحميين، بما في ذلك الطواقم الطبية وغير المقاتلين.</span>
+        </li>
+        <li>
+            <strong><span class="lang-en">Principles of International Humanitarian Law (IHL)</span><span class="lang-ar hidden">مبادئ القانون الدولي الإنساني</span></strong>
+            <span class="lang-en">Core principles include military necessity, humanity, proportionality, distinction, and honor, with clear protection for civilians and medical units.</span>
+            <span class="lang-ar hidden">تشمل المبادئ الأساسية الضرورة العسكرية والإنسانية والتناسب والتمييز والشرف، مع حماية واضحة للمدنيين والوحدات الطبية.</span>
+        </li>
+    </ul>
 </section>
 <section class="gallery-content">
     <h2><span class="lang-en">Return Doc Safiya</span><span class="lang-ar hidden">أعيدوا الدكتور صفية</span></h2>
