@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	initLanguageToggle();
 	initMobileNavToggle();
 	initScrollableGallery();
+	initTableReadMore();
 });
 /*left the hamburger only visible on mobile, and the nav links are hidden until the hamburger is clicked. The hamburger will disappear when the screen is resized to desktop size, and the nav links will be visible again.*/
 
@@ -65,6 +66,12 @@ function initLanguageToggle() {
 				: navToggleButton.dataset.labelEn || "Toggle navigation";
 			navToggleButton.setAttribute("aria-label", navLabel);
 		}
+
+		document.dispatchEvent(
+			new CustomEvent("languagechange", {
+				detail: { isArabic }
+			})
+		);
 	};
 
 	toggleButton.addEventListener("click", () => {
@@ -73,6 +80,56 @@ function initLanguageToggle() {
 	});
 
 	applyLanguageState();
+}
+
+function initTableReadMore() {
+	const toggleButtons = document.querySelectorAll("[data-read-more-toggle]");
+
+	if (!toggleButtons.length) {
+		return;
+	}
+
+	const setButtonLabel = (button, isExpanded) => {
+		const isArabic = document.documentElement.lang === "ar";
+		const moreLabel = isArabic
+			? button.dataset.moreAr || "اقرأ المزيد"
+			: button.dataset.moreEn || "Read more";
+		const lessLabel = isArabic
+			? button.dataset.lessAr || "عرض أقل"
+			: button.dataset.lessEn || "Show less";
+
+		const nextLabel = isExpanded ? lessLabel : moreLabel;
+		button.textContent = nextLabel;
+		button.setAttribute("aria-label", nextLabel);
+	};
+
+	toggleButtons.forEach((button) => {
+		const cell = button
+			.closest("td")
+			?.querySelector("[data-read-more-cell]");
+
+		if (!cell) {
+			return;
+		}
+
+		cell.classList.add("is-collapsed");
+		button.setAttribute("aria-expanded", "false");
+		setButtonLabel(button, false);
+
+		button.addEventListener("click", () => {
+			cell.classList.toggle("is-collapsed");
+			const isExpanded = !cell.classList.contains("is-collapsed");
+			button.setAttribute("aria-expanded", String(isExpanded));
+			setButtonLabel(button, isExpanded);
+		});
+	});
+
+	document.addEventListener("languagechange", () => {
+		toggleButtons.forEach((button) => {
+			const isExpanded = button.getAttribute("aria-expanded") === "true";
+			setButtonLabel(button, isExpanded);
+		});
+	});
 }
 /*This function initializes the scrollable gallery functionality. It allows users to scroll through gallery items using mouse wheel, arrow keys, and drag gestures. It also ensures that the gallery is accessible via keyboard navigation for accessibility. Pop baby pop.*/
 
