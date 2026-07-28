@@ -1,0 +1,123 @@
+<!--Author: Leslie Brockman
+    Date: O7/27/2026
+    Biosite Home Page
+    I am still here.-->
+
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biosite-Home</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Merriweather:wght@400;700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+<!-- Nav a links will be styled as buttons in the CSS -->
+<header>
+    <h1>
+        <span class="lang-en">Where is Doctor Safiya?</span>
+        <span class="lang-ar hidden">أين الدكتور سيفه؟</span>
+    </h1>
+<!--This is the bilingual toggle button that will be used to switch between English and Arabic, js will be added for functionality-->
+    <div class="language-toggle">
+                <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language" data-label-en="Toggle language" data-label-ar="تبديل اللغة">
+                    <span class="lang-en">English | العربية</span>
+                    <span class="lang-ar hidden">العربية | English</span>
+                </button>
+    </div>
+    <nav>
+        <ul class ="link-nav">
+            <li><a class="active" href="index.html"><span class="lang-en">Home</span><span class="lang-ar hidden">الرئيسية</span></a></li>
+            <li><a href="about.html"><span class="lang-en">About</span><span class="lang-ar hidden">حول</span></a></li>
+            <li><a href="https://american-nobody999.github.io/One-match"><span class="lang-en">MPGA</span><span class="lang-ar hidden">MPGA</span></a></li>
+            <li><a href="hobby.html"><span class="lang-en">Sources</span><span class="lang-ar hidden">المصادر</span></a></li>
+        </ul>
+<!-- Hamburger for Mobile DO NOT TOUCH THIS!!!!! EVER!-->
+            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation" data-label-en="Toggle navigation" data-label-ar="تبديل التنقل" aria-expanded="false">
+                ☰
+            </button>
+    </nav>
+</header>
+
+<main>
+<section class="main-content">
+    <div class="hero-image hero-image-home">
+        <img src="images/01.jpg" alt="man walking towards military">
+        <p class="hero-caption">
+            <span class="lang-en">Dr. Hussam Abu Safiya at Kamal Adwan Hospital.</span>
+            <span class="lang-ar hidden">الدكتور حسام أبو صفية في مستشفى كمال عدوان.</span>
+        </p>
+    </div>
+    <div class="main-text">
+        <h2><span class="lang-en">Introducing Doc Safiya</span><span class="lang-ar hidden">تقديم الدكتور سيفه</span></h2>
+        <p><span class="lang-en">Dr. Hussam Abu Safiya is a Palestinian pediatrician and neonatologist whose unwavering commitment to caring for children has made him a widely recognized figure both in Gaza and around the world. For decades, he dedicated his medical career to treating newborns and children, often working under conditions that would challenge even the most experienced healthcare professionals.</span><span class="lang-ar hidden">الدكتور حسام أبو صفية طبيب أطفال واختصاصي حديثي الولادة فلسطيني، وقد جعل التزامه الراسخ برعاية الأطفال منه شخصية معروفة على نطاق واسع في غزة وحول العالم. وعلى مدى عقود، كرّس مسيرته الطبية لعلاج المواليد الجدد والأطفال، وغالبًا ما عمل في ظروف قد تُرهق حتى أكثر المهنيين الصحيين خبرة.</span></p>
+        <p><span class="lang-en">As the director of Kamal Adwan Hospital in northern Gaza, Dr. Abu Safiya became a symbol of medical professionalism, compassion, and resilience during one of the most difficult periods in the region's recent history. Throughout the conflict, he remained at his hospital despite repeated threats, shortages of medicine and equipment, and the constant danger posed by ongoing military operations.</span><span class="lang-ar hidden">وبصفته مدير مستشفى كمال عدوان في شمال غزة، أصبح الدكتور أبو صفية رمزًا للمهنية الطبية والتعاطف والصمود خلال واحدة من أصعب الفترات في التاريخ الحديث للمنطقة. وطوال فترة النزاع، بقي في مستشفاه رغم التهديدات المتكررة ونقص الأدوية والمعدات والخطر الدائم الناتج عن العمليات العسكرية المستمرة.</span></p>
+        <p><span class="lang-en">Born in the Jabalia refugee camp to a family displaced during the 1948 Arab-Israeli War, Dr. Abu Safiya pursued his medical education in Kazakhstan before returning to Gaza to serve his community. He later specialized in pediatrics and neonatology, earning Palestinian board certification and becoming one of the leading physicians caring for the region's youngest and most vulnerable patients.</span><span class="lang-ar hidden">وُلد الدكتور أبو صفية في مخيم جباليا للاجئين لعائلة هُجّرت خلال الحرب العربية الإسرائيلية عام 1948، وتابع تعليمه الطبي في كازاخستان قبل أن يعود إلى غزة لخدمة مجتمعه. ولاحقًا تخصص في طب الأطفال وحديثي الولادة، وحصل على البورد الفلسطيني، ليصبح أحد الأطباء البارزين في رعاية أصغر المرضى وأكثرهم هشاشة في المنطقة.</span></p>
+        <p><span class="lang-en">His dedication extended beyond clinical medicine, as he also helped strengthen neonatal and pediatric services throughout Gaza while mentoring younger healthcare professionals. During the Gaza conflict, Dr. Abu Safiya became internationally known through his public appeals describing the humanitarian challenges facing hospitals and the desperate need to protect patients, medical staff, and healthcare facilities.</span><span class="lang-ar hidden">وامتد التزامه إلى ما هو أبعد من الطب السريري، إذ ساهم أيضًا في تعزيز خدمات حديثي الولادة وطب الأطفال في أنحاء غزة، إلى جانب إرشاد الكوادر الصحية الشابة. وخلال النزاع في غزة، أصبح الدكتور أبو صفية معروفًا دوليًا من خلال مناشداته العلنية التي وصفت التحديات الإنسانية التي تواجه المستشفيات والحاجة الملحة لحماية المرضى والطواقم الطبية والمرافق الصحية.</span></p>
+        <p><span class="lang-en">His interviews and statements provided firsthand accounts of the conditions inside Kamal Adwan Hospital, where doctors and nurses continued treating injured civilians despite severe shortages of electricity, fuel, medical supplies, and staff. Many international medical organizations and humanitarian groups highlighted his efforts as an example of physicians continuing their ethical duty to care for patients under extraordinary circumstances.</span><span class="lang-ar hidden">وقد قدّمت مقابلاته وتصريحاته شهادات مباشرة عن الأوضاع داخل مستشفى كمال عدوان، حيث واصل الأطباء والممرضون علاج المدنيين المصابين رغم النقص الحاد في الكهرباء والوقود والإمدادات الطبية والكوادر. وأبرزت العديد من المنظمات الطبية الدولية والمجموعات الإنسانية جهوده بوصفها مثالًا على استمرار الأطباء في أداء واجبهم الأخلاقي تجاه رعاية المرضى في ظروف استثنائية.</span></p>
+    </div>
+</section>
+
+<section class="gallery-content">
+    <h2><span class="lang-en">Return Doc Safiya</span><span class="lang-ar hidden">أعيدوا الدكتور سيفه</span></h2>
+    <div class="scrolling-gallery">
+        <div class="gallery-item">
+            <img src="images/02.jpg" alt="Humanti.org slide 1">
+        </div>
+        <div class="gallery-item">
+            <img src="images/03.jpg" alt="Humanti.org slide 2">
+        </div>
+        <div class="gallery-item">
+            <img src="images/04.jpg" alt="Humanti.org slide 3">
+        </div>
+        <div class="gallery-item">
+            <img src="images/05.jpg" alt="Humanti.org slide 4">
+        </div>
+        <div class="gallery-item">
+            <img src="images/06.jpg" alt="Humanti.org slide 5">
+        </div>
+        <div class="gallery-item">
+            <img src="images/07.jpg" alt="Humanti.org slide 6">
+        </div>
+        <div class="gallery-item">
+            <img src="images/08.jpg" alt="Humanti.org slide 7">
+        </div>
+        <div class="gallery-item">
+            <img src="images/09.jpg" alt="Humanti.org slide 8">
+        </div>
+        <div class="gallery-item">
+            <img src="images/10.jpg" alt="Humanti.org slide 9">
+        </div>
+    </div>
+</section>
+    <!-- .action-items -->
+    <section class="action-items"><!-- .action-items -->
+    <div class="action-items">
+    <h2><span class="lang-en">Action Items</span><span class="lang-ar hidden">بنود العمل</span></h2>
+    <div class="action-item">
+        <ul class="action-list">
+<!--Need verification of the links one final time before adding to make sure they are still active-->            
+            <li><img src="images/11.jpg" alt="step 1"></li>
+            <li><img src="images/12.jpg" alt="step 2"></li>
+            <li><img src="images/13.jpg" alt="red-ribbon"></li>
+             
+        </ul>
+    </div>
+</div> 
+</section>
+</main>
+
+<footer>
+    <div class="footer-content">
+<!--This is the Leslie Design logo-->
+    <img src="images/24.png" alt="Leslie Design logo">
+    <p><span class="lang-en">&copy; 2026 American Nobody</span><span class="lang-ar hidden">&copy; 2026 أمريكان نوبودي</span></p>
+    <img src="images/25.jpg" alt="Coming soon for Palestine">
+    </div>
+</footer>
+
+</body>
+</html>
